@@ -34,7 +34,7 @@
             <button type="button" class="button" onclick="dis('2')">2</button>
             <button type="button" class="button" onclick="dis('3')">3</button>
 
-            <button type="button" class="buttonequal" onclick="calculateQueue(queue)" value="="></button>
+            <button type="button" class="buttonequal" onclick="calculateQueue('=')">=</button>
             <button type="button" class="buttonzero" onclick="dis('0')">0</button>
             <button type="button" class="button" onclick="dis('.')">.</button>
 
@@ -55,10 +55,11 @@
                 input = parseFloat(input);
 
                 addToQueue(input);
+                alert('asdfghjklmnbvcxzqwertyuioplkjhgfdsamnbvcxz');
             }
 
             var txt = [0];
-            var dividedbyzero = 0;
+            var dividedByZero = 0;
             for (var i = 2; i < value.length; i = i + 2) {
                 switch (queue[i - 1]) {
                     case '+':
@@ -78,12 +79,12 @@
                         }
                         break;
                     case '*':
-                    txt = txt * value[i];
+                        txt = txt * value[i];
                         break;
                 }
             }
 
-            txt = txt.toFixed(10);
+            // txt = txt.toFixed(10);
             txt = parseFloat(txt);
             if (dividedByZero === 1) {
                 clearAll();
@@ -114,32 +115,13 @@
 
         function dis(arg) {
             if (document.getElementById("txt").innerHTML === "ERROR" || (document.getElementById("txt").innerHTML == "0" && arg != ".")) { document.getElementById("txt").innerHTML = ""; }
-
+            alert('1234567890')
             if (!(arg === ".") || !input.match(/[.]/)) {
 
                 input += arg;
                 document.getElementById("txt").innerHTML += arg;
             }
-
-
         }
-
-
-
-        // function dis(arg) {
-        //     totalstring = document.getElementById("txt").value += arg;
-        //     // document.getElementById("id1").innerHTML = totalstring;
-        //     if (document.getElementById("txt").innerHTML === "ERROR" || (document.getElementById("txt").innerHTML == "0" && arg != ".")) 
-        //     { document.getElementById("txt").innerHTML = ""; }
-
-        //     if (!(arg === ".") || !input.match(/[.]/)) {
-
-        //         input += arg;
-        //         document.getElementById("txt").innerHTML += arg;
-        //     }
-
-        // }
-
 
         // operator (+, -, *, /)
         function operator(arg) {
@@ -148,9 +130,20 @@
                 addToQueue(input);
                 addToQueue(arg);
                 document.getElementById("txt").innerHTML += arg;
+                alert('hshjdbabc')
                 input = 0;
-
             }
+            if (arg == "-" && isNaN(queue[0]) && input !== "-") {
+                input = "-";
+
+                document.getElementById("txt").innerHTML = "-";
+            }
+
+            // if (arg == "*" && isNaN(queue[0]) && input !== "*") {
+            //     input = "*";
+
+            //     document.getElementById("txt").innerHTML = "*";
+            // }
         }
     </script>
 
