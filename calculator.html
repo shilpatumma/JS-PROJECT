@@ -10,40 +10,150 @@
 
 <body>
 
-    <h1 id="heading">CALCULATOR</h1>
+    <!-- <h1 id="heading">CALCULATOR</h1> -->
 
     <div class="container">
         <div class="cal">
 
             <input type="text" id="txt">
 
-            <button type="button" class="button" onclick="clear()">C</button>
-            <button type="button" class="button" onclick="xsquare()">x<sup>2</sup></button>
-            <button type="button" class="button" onclick="multiplication()">*</button>
-            <button type="button" class="button" onclick="addition()">+</button>
+            <button type="button" class="buttonclear" onclick="clearData()">C</button>
+            <button type="button" class="button" onclick="dis('7')">7</button>
+            <button type="button" class="button" onclick="dis('8')">8</button>
+            <button type="button" class="button" onclick="dis('9')">9</button>
 
-            <button type="button" class="button" onclick="seven()">7</button>
-            <button type="button" class="button" onclick="eight()">8</button>
-            <button type="button" class="button" onclick="nine()">9</button>
-            <button type="button" class="button" onclick="substarction()">-</button>
+            <button type="button" class="button" onclick="operator('+')">+</button>
+            <button type="button" class="button" onclick="operator('*')">*</button>
+            <button type="button" class="button" onclick="dis('4')">4</button>
+            <button type="button" class="button" onclick="dis('5')">5</button>
+            <button type="button" class="button" onclick="dis('6')">6</button>
 
-            <button type="button" class="button" onclick="four()">4</button>
-            <button type="button" class="button" onclick="five()">5</button>
-            <button type="button" class="button" onclick="six()">6</button>
-            <button type="button" class="button" onclick="division()">/</button>
+            <button type="button" class="button" onclick="operator('-')">-</button>
+            <button type="button" class="button" onclick="operator('/')">/</button>
+            <button type="button" class="button" onclick="dis('1')">1</button>
+            <button type="button" class="button" onclick="dis('2')">2</button>
+            <button type="button" class="button" onclick="dis('3')">3</button>
 
-            <button type="button" class="button" onclick="one()">1</button>
-            <button type="button" class="button" onclick="two()">2</button>
-            <button type="button" class="button" onclick="three()">3</button>
-            <button type="button" class="button" onclick="percentage()">%</button>
-
-            <button type="button" class="buttonzero" onclick="zero()">0</button>
-            <button type="button" class="button" onclick="dot()">.</button>
-            <button type="button" class="button" onclick="equal()">=</button>           
+            <button type="button" class="buttonequal" onclick="calculateQueue(queue)" value="="></button>
+            <button type="button" class="buttonzero" onclick="dis('0')">0</button>
+            <button type="button" class="button" onclick="dis('.')">.</button>
 
         </div>
+        <!-- <p id="id1"></p> -->
+
     </div>
-    <script src="calculator.js"></script>
+
+    <script>
+        var queue = [];
+        var input = 0;
+        // let totalstring;
+
+
+        // equal (=)
+        function calculateQueue(value) {
+            if (input !== 0) {
+                input = parseFloat(input);
+
+                addToQueue(input);
+            }
+
+            var txt = [0];
+            var dividedbyzero = 0;
+            for (var i = 2; i < value.length; i = i + 2) {
+                switch (queue[i - 1]) {
+                    case '+':
+                        txt += value(i);
+                        break;
+
+                    case '-':
+                        txt -= value(i);
+                        break;
+
+                    case '/':
+                        if (value[i] === 0) {
+                            dividedByZero = 1;
+                        }
+                        else {
+                            txt = txt / value[i];
+                        }
+                        break;
+                    case '*':
+                    txt = txt * value[i];
+                        break;
+                }
+            }
+
+            txt = txt.toFixed(10);
+            txt = parseFloat(txt);
+            if (dividedByZero === 1) {
+                clearAll();
+                document.getElementById("txt").innerHTML = "ERROR";
+            }
+            else {
+                document.getElementById("txt").innerHTML = txt;
+                input = txt;
+                queue = [];
+            }
+        }
+
+
+        function addToQueue(input) {
+            queue.push(input);
+        }
+
+
+        // C button(clear)
+        function clearData() {
+            queue = [];
+            input = 0;
+            document.getElementById("txt").value = 0;
+        }
+
+
+        // (0-9 number)
+
+        function dis(arg) {
+            if (document.getElementById("txt").innerHTML === "ERROR" || (document.getElementById("txt").innerHTML == "0" && arg != ".")) { document.getElementById("txt").innerHTML = ""; }
+
+            if (!(arg === ".") || !input.match(/[.]/)) {
+
+                input += arg;
+                document.getElementById("txt").innerHTML += arg;
+            }
+
+
+        }
+
+
+
+        // function dis(arg) {
+        //     totalstring = document.getElementById("txt").value += arg;
+        //     // document.getElementById("id1").innerHTML = totalstring;
+        //     if (document.getElementById("txt").innerHTML === "ERROR" || (document.getElementById("txt").innerHTML == "0" && arg != ".")) 
+        //     { document.getElementById("txt").innerHTML = ""; }
+
+        //     if (!(arg === ".") || !input.match(/[.]/)) {
+
+        //         input += arg;
+        //         document.getElementById("txt").innerHTML += arg;
+        //     }
+
+        // }
+
+
+        // operator (+, -, *, /)
+        function operator(arg) {
+            if (input !== 0) {
+                input = parseFloat(input);
+                addToQueue(input);
+                addToQueue(arg);
+                document.getElementById("txt").innerHTML += arg;
+                input = 0;
+
+            }
+        }
+    </script>
+
 </body>
 
 </html>

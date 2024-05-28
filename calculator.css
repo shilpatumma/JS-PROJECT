@@ -28,24 +28,54 @@ body {
 
 .button {
     height: 109px;
-    width: 109px;
+    width: 108px;
     border-radius: 16px;
     border: none;
     font-size: 50px;
     color: black;
     background-color: wheat;
+    border: 1px solid black;
 }
 
-/* .button :hover{
-    background-color: red;
-} */
+.buttonzero {
+    height: 109px;
+    width: 229px;
+    border-radius: 16px;
+    border: none;
+    font-size: 50px;
+    color: black;
+    background-color: wheat;
+    border: 1px solid black;
+}
+
+.buttonequal {
+    height: 109px;
+    width: 229px;
+    border-radius: 16px;
+    border: none;
+    font-size: 50px;
+    color: black;
+    background-color: wheat;
+    border: 1px solid black;
+}
+
+.buttonclear {
+    height: 109px;
+    width: 229px;
+    border-radius: 16px;
+    border: none;
+    font-size: 50px;
+    color: black;
+    background-color: wheat;
+    border: 1px solid black;
+}
 
 #txt {
     text-align: left;
     background-color: wheat;
     border: 2px solid black;
-    height: 135px;
-    width: 483px;
+    height: 105px;
+    width: 595px;
     border-radius: 16px;
     display: flex;
     flex-wrap: wrap;
@@ -68,14 +98,4 @@ body {
     align-items: center;
     gap: 15px;
     font-size: 50px;
-}
-
-.buttonzero {
-    height: 109px;
-    width: 229px;
-    border-radius: 16px;
-    border: none;
-    font-size: 50px;
-    color: black;
-    background-color: wheat;
 }
