@@ -17,7 +17,8 @@
 
             <input type="text" id="txt">
 
-            <button type="button" class="buttonclear" onclick="clearData()">C</button>
+            <button type="button" class="button" onclick="clearData()">C</button>
+            <button type="button" class="button" onclick="operator('%')">%</button>
             <button type="button" class="button" onclick="dis('7')">7</button>
             <button type="button" class="button" onclick="dis('8')">8</button>
             <button type="button" class="button" onclick="dis('9')">9</button>
@@ -34,69 +35,63 @@
             <button type="button" class="button" onclick="dis('2')">2</button>
             <button type="button" class="button" onclick="dis('3')">3</button>
 
-            <button type="button" class="buttonequal" onclick="calculateQueue('=')">=</button>
+            <button type="button" class="button" onclick="calculateQueue(queue)">=</button>
+            <button type="button" class="button" onclick="operator('^')">x<sup>2</sup></button>
             <button type="button" class="buttonzero" onclick="dis('0')">0</button>
             <button type="button" class="button" onclick="dis('.')">.</button>
 
         </div>
-        <!-- <p id="id1"></p> -->
-
     </div>
 
     <script>
         var queue = [];
         var input = 0;
-        // let totalstring;
-
 
         // equal (=)
         function calculateQueue(value) {
             if (input !== 0) {
                 input = parseFloat(input);
-
                 addToQueue(input);
-                alert('asdfghjklmnbvcxzqwertyuioplkjhgfdsamnbvcxz');
             }
-
-            var txt = [0];
+            console.log("value is equal to " + value);
+            var txt = value[0];
             var dividedByZero = 0;
+            console.log("enter value", value);
+
             for (var i = 2; i < value.length; i = i + 2) {
                 switch (queue[i - 1]) {
                     case '+':
-                        txt += value(i);
+                        txt = txt + value[i];
                         break;
 
                     case '-':
-                        txt -= value(i);
+                        txt = txt - value[i];
+                        break;
+
+                    case '%':
+                        txt = txt % value[i];
+                        break;
+
+                    case '^':
+                        txt = value[i] * value[i];
                         break;
 
                     case '/':
-                        if (value[i] === 0) {
-                            dividedByZero = 1;
-                        }
-                        else {
-                            txt = txt / value[i];
-                        }
+                        txt = txt / value[i];
                         break;
+
                     case '*':
                         txt = txt * value[i];
                         break;
                 }
             }
-
-            // txt = txt.toFixed(10);
+            
             txt = parseFloat(txt);
-            if (dividedByZero === 1) {
-                clearAll();
-                document.getElementById("txt").innerHTML = "ERROR";
-            }
-            else {
-                document.getElementById("txt").innerHTML = txt;
-                input = txt;
-                queue = [];
-            }
+            document.getElementById("txt").value = txt;
+            input = txt;
+            queue = [];
+            console.log("final value :" + value);
         }
-
 
         function addToQueue(input) {
             queue.push(input);
@@ -112,15 +107,9 @@
 
 
         // (0-9 number)
-
         function dis(arg) {
-            if (document.getElementById("txt").innerHTML === "ERROR" || (document.getElementById("txt").innerHTML == "0" && arg != ".")) { document.getElementById("txt").innerHTML = ""; }
-            alert('1234567890')
-            if (!(arg === ".") || !input.match(/[.]/)) {
-
-                input += arg;
-                document.getElementById("txt").innerHTML += arg;
-            }
+            input += arg;
+            document.getElementById("txt").value += arg;
         }
 
         // operator (+, -, *, /)
@@ -129,21 +118,15 @@
                 input = parseFloat(input);
                 addToQueue(input);
                 addToQueue(arg);
-                document.getElementById("txt").innerHTML += arg;
-                alert('hshjdbabc')
+                console.log("operator queue : " + queue);
+                if (arg == '^') {
+                    calculateQueue(queue);
+                }
+                else {
+                    document.getElementById("txt").value += arg;
+                }
                 input = 0;
             }
-            if (arg == "-" && isNaN(queue[0]) && input !== "-") {
-                input = "-";
-
-                document.getElementById("txt").innerHTML = "-";
-            }
-
-            // if (arg == "*" && isNaN(queue[0]) && input !== "*") {
-            //     input = "*";
-
-            //     document.getElementById("txt").innerHTML = "*";
-            // }
         }
     </script>
 

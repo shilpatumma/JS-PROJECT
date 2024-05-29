@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    height: 756px;
+    /* height: 756px; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -17,13 +17,14 @@ body {
 }
 
 .cal {
-    height: 600px;
-    width: 600px;
+    height: 630px;
+    width: 620px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 15px;
+    background-color: black;
 }
 
 .button {
@@ -71,11 +72,12 @@ body {
 }
 
 #txt {
+    margin-top: 20px;
     text-align: left;
     background-color: wheat;
     border: 2px solid black;
-    height: 105px;
-    width: 595px;
+    height: 70px;
+    width: 555px;
     border-radius: 16px;
     display: flex;
     flex-wrap: wrap;
@@ -83,6 +85,7 @@ body {
     align-items: center;
     gap: 15px;
     font-size: 50px;
+    padding: 20px;
 }
 
 #txtbutton {
