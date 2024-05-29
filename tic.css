@@ -1,75 +1,39 @@
-* {
-    margin: 0;
-    padding: 0;
+h1 {
+    color: orangered;
+    margin-bottom: -5px;
 }
 
-body {
-    /* background-color: skyblue; */
-    text-align: center;
+p {
+    margin-bottom: -10px;
 }
 
-.container {
-    height: 500px;
+.ui {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
-.game {
-    height: 355px;
-    width: 364px;
+.row {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
 }
 
-.button {
+.cell {
     border: none;
     width: 80px;
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* font-size: 24px; */
+    font-size: 24px;
     text-align: center;
     cursor: pointer;
-    border: 1px solid black;
-    font-size: 50px;
-    color: black;
 }
 
-.button:active {
+.cell:active {
     outline: none;
 }
 
-/* Reset Button */
-#but {
-    box-sizing: border-box;
-    width: 95px;
-    height: 40px;
-    border: 1px solid black;
-    /* margin-left: auto; */
-    border-radius: 8px;
-    font-family: Verdana,
-        Geneva, Tahoma, sans-serif;
-
-    background-color: white;
-    color: black;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-/* Player turn space */
-#print {
-    font-family: Verdana,
-        Geneva, Tahoma, sans-serif;
-    color: dodgerblue;
-    font-size: 20px;
-}
-
+/* 3*3 Grid */
 #b1 {
     border-bottom: 1px solid gray;
     border-right: 1px solid gray;
@@ -116,4 +80,41 @@ body {
 #b9 {
     border-top: 1px solid gray;
     border-left: 1px solid gray;
+}
+
+/* Reset Button */
+#but {
+    box-sizing: border-box;
+    width: 95px;
+    height: 40px;
+    border: 1px solid dodgerblue;
+    margin-left: auto;
+    border-radius: 8px;
+    font-family: Verdana,
+        Geneva, Tahoma, sans-serif;
+
+    background-color: whitesmoke;
+    color: dodgerblue;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Player turn space */
+#print {
+    font-family: Verdana,
+        Geneva, Tahoma, sans-serif;
+    color: dodgerblue;
+    font-size: 20px;
+}
+
+/* Main Container */
+#main {
+    text-align: center;
+}
+
+/* Game Instruction Text */
+#ins {
+    font-family: Verdana, Geneva,
+        Tahoma, sans-serif;
+    color: dodgerblue;
 }
