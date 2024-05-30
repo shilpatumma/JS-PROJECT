@@ -4,12 +4,11 @@
 }
 
 body {
-    /* background-color: skyblue; */
     text-align: center;
 }
 
 .container {
-    height: 500px;
+    height: 400px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -17,8 +16,8 @@ body {
 }
 
 .game {
-    height: 355px;
-    width: 364px;
+    /* height: 355px; */
+    width: 284px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -39,81 +38,17 @@ body {
     border: 1px solid black;
     font-size: 50px;
     color: black;
+    background-color: papayawhip;
 }
 
 .button:active {
     outline: none;
 }
 
-/* Reset Button */
-#but {
-    box-sizing: border-box;
-    width: 95px;
-    height: 40px;
-    border: 1px solid black;
-    /* margin-left: auto; */
-    border-radius: 8px;
-    font-family: Verdana,
-        Geneva, Tahoma, sans-serif;
-
-    background-color: white;
-    color: black;
-    font-size: 20px;
-    cursor: pointer;
-}
-
 /* Player turn space */
 #print {
     font-family: Verdana,
         Geneva, Tahoma, sans-serif;
-    color: dodgerblue;
+    color: black;
     font-size: 20px;
-}
-
-#b1 {
-    border-bottom: 1px solid gray;
-    border-right: 1px solid gray;
-}
-
-#b2 {
-    border-bottom: 1px solid gray;
-    border-right: 1px solid gray;
-    border-left: 1px solid gray;
-}
-
-#b3 {
-    border-bottom: 1px solid gray;
-    border-left: 1px solid gray;
-}
-
-#b4 {
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
-    border-right: 1px solid gray;
-}
-
-#b5 {
-    border: 1px solid gray;
-}
-
-#b6 {
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
-    border-left: 1px solid gray;
-}
-
-#b7 {
-    border-top: 1px solid gray;
-    border-right: 1px solid gray;
-}
-
-#b8 {
-    border-top: 1px solid gray;
-    border-right: 1px solid gray;
-    border-left: 1px solid gray;
-}
-
-#b9 {
-    border-top: 1px solid gray;
-    border-left: 1px solid gray;
 }
