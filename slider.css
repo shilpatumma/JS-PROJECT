@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    /* max-width: 1100px; */
+    height: 555px;
+    margin: auto;
+    font-family: arial;
+    position: relative;
+}
+
+.slider {
+    width: 700px;
+    height: 393px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide {
+    width: 700px;
+    height: 393px;
+    position: absolute;
+    text-align: center;
+    left: 100%;
+    transition: left 1s;
+
+    overflow-x: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.button {
+    font-size: 16px;
+    position: absolute;
+    padding: 14px;
+    z-index: 10;
+    background-color: white;
+}
+
+#previous {
+    left: 37%;
+    bottom: 0%;
+}
+
+#next {
+    left: 57%;
+    bottom: 0%;
+}
+
+#s1 {
+    background-image: url('js-image/Dhokla.png');
+    left: 0;
+}
+
+#s2 {
+    background-image: url('js-image/Gathiya.png');
+}
+
+#s3 {
+    background-image: url('js-image/Khandvi.png');
+}
+
+#s4 {
+    background-image: url('js-image/Undhiyu.png');
+}
+
+#s5 {
+    background-image: url('js-image/Mohanthal.png');
+}
+
+#s6 {
+    background-image: url('js-image/Thepla.png');
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+    <link rel="stylesheet" href="slider.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="slider">
+
+            <div class="slide" id="s1">
+                <img src="js-image/Dhokla.png" alt="Dhokla">
+            </div>
+            <div class="slide" id="s2">
+                <img src="js-image/Gathiya.png" alt="Gathiya">
+            </div>
+            <div class="slide" id="s3">
+                <img src="js-image/Khandvi.png" alt="Khandvi">
+            </div>
+            <div class="slide" id="s4">
+                <img src="js-image/Undhiyu.png" alt="Undhiyu">
+            </div>
+            <div class="slide" id="s5">
+                <img src="js-image/Thepla.png" alt="Thepla">
+            </div>
+            <div class="slide" id="s6">
+                <img src="js-image/Mohanthal.png" alt="Mohanthal">
+            </div>
+
+        </div>
+        <button class="button" id="previous" onclick="nextbtn(-1)">PREVIOUS</button>
+        <button class="button" id="next" onclick="nextbtn(1)">NEXT</button>
+    </div>
+
+    <script>
+
+        let slideimages = 1;
+        showslides();
+
+        function showslides() {
+
+            let slides = document.getElementsByClassName('slide');
+            let button = document.getElementById('next');
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+        }
+
+        if (slideimages > slides.length) {
+            slideIndex = 1;
+        }
+
+        for (i = 0; i < button.length; i++) {
+            button[i].className = button[i].className.replace(" active", "");
+        }
+
+        slides[slideimages - 1].style.display = "block";
+        button[slideimages - 1].className += " active";
+
+        setTimeout(showSlides, 2000);
+
+    </script>
+</body>
+
+</html>
