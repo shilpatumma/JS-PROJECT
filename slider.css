@@ -1,85 +1,76 @@
 * {
-    margin: 0;
-    padding: 0;
+    box-sizing: border-box
 }
 
 body {
+    font-family: Verdana, sans-serif;
+    margin: 0
+}
+
+.mySlides {
+    display: none
+}
+
+img {
+    vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
     text-align: center;
-}
-
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-
-    /* max-width: 1100px; */
-    height: 555px;
-    margin: auto;
-    font-family: arial;
+    /* height: 393px;
+    max-width: 1000px;
     position: relative;
+    margin: auto; */
 }
 
-.slider {
-    width: 700px;
-    height: 393px;
-    overflow: hidden;
-    position: relative;
-}
-
-.slide {
-    width: 700px;
-    height: 398px;
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
     position: absolute;
-    text-align: center;
-    left: 100%;
-    transition: left 1s;
-
-    overflow-x: hidden;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.button {
-    font-size: 16px;
-    position: absolute;
-    padding: 14px;
-    z-index: 10;
+    width: auto;
+    padding: 10px;
+    margin-top: 30px;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
     background-color: white;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    border: 2px solid black;
 }
 
-#previous {
-    left: 37%;
-    bottom: 0%;
+.next {
+    right: 700px;
+    border-radius: 3px 0 0 3px;
 }
 
-#next {
-    left: 57%;
-    bottom: 0%;
+.prev {
+    left: 700px;
+    border-radius: 3px 0 0 3px;
 }
 
-#s1 {
-    background-image: url('js-image/Dhokla.png');
-    left: 0;
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
-#s2 {
-    background-image: url('js-image/Gathiya.png');
+/* Number text (1/6 etc) */
+.numbertext {
+    left: 520px;
+    color: rgb(13, 131, 241);
+    font-size: 20px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
 }
 
-#s3 {
-    background-image: url('js-image/Khandvi.png');
-}
-
-#s4 {
-    background-image: url('js-image/Undhiyu.png');
-}
-
-#s5 {
-    background-image: url('js-image/Mohanthal.png');
-}
-
-#s6 {
-    background-image: url('js-image/Thepla.png');
-}
+/* @media only screen and (max-width: 300px) {
+    .prev,
+    .next,
+    .text {
+        font-size: 11px
+    }
+} */

@@ -4,68 +4,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>slider</title>
+    <title>slider-images</title>
     <link rel="stylesheet" href="slider.css">
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="slider">
+    <div class="slideshow-container">
 
-            <div class="slide" id="s1">
-                <img src="js-image/Dhokla.png" alt="Dhokla">
-            </div>
-            <div class="slide" id="s2">
-                <img src="js-image/Gathiya.png" alt="Gathiya">
-            </div>
-            <div class="slide" id="s3">
-                <img src="js-image/Khandvi.png" alt="Khandvi">
-            </div>
-            <div class="slide" id="s4">
-                <img src="js-image/Undhiyu.png" alt="Undhiyu">
-            </div>
-            <div class="slide" id="s5">
-                <img src="js-image/Thepla.png" alt="Thepla">
-            </div>
-            <div class="slide" id="s6">
-                <img src="js-image/Mohanthal.png" alt="Mohanthal">
-            </div>
-
+        <div class="mySlides">
+            <div class="numbertext">1 / 6</div>
+            <img src="js-image/a.png" style="width: 700px; height: 393px;">
         </div>
-        <button class="button" id="previous" onclick="nextbtn(-1)">PREVIOUS</button>
-        <button class="button" id="next" onclick="nextbtn(1)">NEXT</button>
+
+        <div class="mySlides">
+            <div class="numbertext">2 / 6</div>
+            <img src="js-image/b.png" style="width: 700px; height: 393px;">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">3 / 6</div>
+            <img src="js-image/c.png" style="width: 700px; height: 393px;">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">4 / 6</div>
+            <img src="js-image/d.png" style="width: 700px; height: 393px;">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">5 / 6</div>
+            <img src="js-image/e.png" style="width: 700px; height: 393px;">
+        </div>
+        <div class="mySlides">
+            <div class="numbertext">6 / 6</div>
+            <img src="js-image/f.png" style="width: 700px; height: 393px;">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">PREVIOUS</a>
+        <a class="next" onclick="plusSlides(1)">NEXT</a>
+
     </div>
+    <br>
 
     <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
 
-        let slideimages = 1;
-        showslides();
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
 
-        function showslides() {
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
 
-            let slides = document.getElementsByClassName('slide');
-            let button = document.getElementById('next');
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+
+
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+
 
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
+
+            slides[slideIndex - 1].style.display = "block";
         }
-
-        if (slideimages > slides.length) {
-            slideIndex = 1;
-        }
-
-        for (i = 0; i < button.length; i++) {
-            button[i].className = button[i].className.replace(" active", "");
-        }
-
-        slides[slideimages - 1].style.display = "block";
-        button[slideimages - 1].className += " active";
-
-        setTimeout(showSlides, 2000);
-
     </script>
+
 </body>
 
 </html>
