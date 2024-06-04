@@ -1,0 +1,249 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1.4">
+    <title>puzzle</title>
+    <link rel="stylesheet" href="puzzle.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="puzzle">
+            <button id="n1" onclick="fun1()">1</button>
+            <button id="n2" onclick="fun2()">2</button>
+            <button id="n3" onclick="fun3()">3</button>
+            <button id="n4" onclick="fun4()"></button>
+            <button id="n5" onclick="fun5()">5</button>
+            <button id="n6" onclick="fun6()">6</button>
+            <button id="n7" onclick="fun7()">7</button>
+            <button id="n8" onclick="fun8()">8</button>
+            <button id="n9" onclick="fun9()">4</button>
+        </div>
+        <div id="buttons">
+            <button class="btn" id="start" onclick="startbtn();">RESTART</button>
+        </div>
+    </div>
+    <script>
+        // box1
+        function fun1(x) {
+            v1 = document.getElementById("n1").innerHTML;
+            v2 = document.getElementById("n2").innerHTML;
+            v4 = document.getElementById("n4").innerHTML;
+
+
+            if (v2 == '') {
+                document.getElementById("n2").innerHTML = v1;
+                document.getElementById("n1").innerHTML = v2;
+            }
+
+            if (v4 == '') {
+                document.getElementById("n4").innerHTML = v1;
+                document.getElementById("n1").innerHTML = v4;
+            }
+        }
+
+        // box2
+        function fun2(x) {
+            v2 = document.getElementById("n2").innerHTML;
+            v1 = document.getElementById("n1").innerHTML;
+            v3 = document.getElementById("n3").innerHTML;
+            v5 = document.getElementById("n5").innerHTML;
+
+
+            if (v1 == '') {
+                document.getElementById("n1").innerHTML = v2;
+                document.getElementById("n2").innerHTML = v1;
+            }
+
+            if (v3 == '') {
+                document.getElementById("n3").innerHTML = v2;
+                document.getElementById("n2").innerHTML = v3;
+            }
+
+            if (v5 == '') {
+                document.getElementById("n5").innerHTML = v2;
+                document.getElementById("n2").innerHTML = v5;
+            }
+        }
+
+        // box3
+        function fun3(x) {
+            v3 = document.getElementById("n3").innerHTML;
+            v2 = document.getElementById("n2").innerHTML;
+            v6 = document.getElementById("n6").innerHTML;
+
+
+            if (v2 == '') {
+                document.getElementById("n2").innerHTML = v3;
+                document.getElementById("n3").innerHTML = v2;
+            }
+
+            if (v6 == '') {
+                document.getElementById("n6").innerHTML = v3;
+                document.getElementById("n3").innerHTML = v6;
+            }
+        }
+
+        // box4
+        function fun4(x) {
+            v4 = document.getElementById("n4").innerHTML;
+            v1 = document.getElementById("n1").innerHTML;
+            v5 = document.getElementById("n5").innerHTML;
+            v7 = document.getElementById("n7").innerHTML;
+
+
+            if (v1 == '') {
+                document.getElementById("n1").innerHTML = v4;
+                document.getElementById("n4").innerHTML = v1;
+            }
+
+            if (v5 == '') {
+                document.getElementById("n5").innerHTML = v4;
+                document.getElementById("n4").innerHTML = v5;
+            }
+
+            if (v7 == '') {
+                document.getElementById("n7").innerHTML = v4;
+                document.getElementById("n4").innerHTML = v7;
+            }
+        }
+
+        // box5
+        function fun5(x) {
+            v5 = document.getElementById("n5").innerHTML;
+            v4 = document.getElementById("n4").innerHTML;
+            v2 = document.getElementById("n2").innerHTML;
+            v6 = document.getElementById("n6").innerHTML;
+            v8 = document.getElementById("n8").innerHTML;
+
+
+            if (v2 == '') {
+                document.getElementById("n2").innerHTML = v5;
+                document.getElementById("n5").innerHTML = v2;
+            }
+
+            if (v4 == '') {
+                document.getElementById("n4").innerHTML = v5;
+                document.getElementById("n5").innerHTML = v4;
+            }
+
+            if (v6 == '') {
+                document.getElementById("n6").innerHTML = v5;
+                document.getElementById("n5").innerHTML = v6;
+            }
+
+            if (v8 == '') {
+                document.getElementById("n8").innerHTML = v5;
+                document.getElementById("n5").innerHTML = v8;
+            }
+        }
+
+        // box6
+        function fun6(x) {
+            v6 = document.getElementById("n6").innerHTML;
+            v3 = document.getElementById("n3").innerHTML;
+            v5 = document.getElementById("n5").innerHTML;
+            v9 = document.getElementById("n9").innerHTML;
+
+
+            if (v3 == '') {
+                document.getElementById("n3").innerHTML = v6;
+                document.getElementById("n6").innerHTML = v3;
+            }
+
+            if (v5 == '') {
+                document.getElementById("n5").innerHTML = v6;
+                document.getElementById("n6").innerHTML = v5;
+            }
+
+            if (v9 == '') {
+                document.getElementById("n9").innerHTML = v6;
+                document.getElementById("n6").innerHTML = v9;
+            }
+        }
+
+        // box7
+        function fun7(x) {
+            v7 = document.getElementById("n7").innerHTML;
+            v4 = document.getElementById("n4").innerHTML;
+            v8 = document.getElementById("n8").innerHTML;
+
+
+            if (v4 == '') {
+                document.getElementById("n4").innerHTML = v7;
+                document.getElementById("n7").innerHTML = v4;
+            }
+
+            if (v8 == '') {
+                document.getElementById("n8").innerHTML = v7;
+                document.getElementById("n7").innerHTML = v8;
+            }
+        }
+
+        // box8
+        function fun8(x) {
+            v8 = document.getElementById("n8").innerHTML;
+            v5 = document.getElementById("n5").innerHTML;
+            v7 = document.getElementById("n7").innerHTML;
+            v9 = document.getElementById("n9").innerHTML;
+
+            if (v5 == '') {
+                document.getElementById("n5").innerHTML = v8;
+                document.getElementById("n8").innerHTML = v5;
+            }
+
+            if (v7 == '') {
+                document.getElementById("n7").innerHTML = v8;
+                document.getElementById("n8").innerHTML = v7;
+            }
+
+            if (v9 == '') {
+                document.getElementById("n9").innerHTML = v8;
+                document.getElementById("n8").innerHTML = v9;
+            }
+        }
+
+        // box9
+        function fun9(x) {
+            v9 = document.getElementById("n9").innerHTML;
+            v8 = document.getElementById("n8").innerHTML;
+            v6 = document.getElementById("n6").innerHTML;
+
+            if (v8 == '') {
+                document.getElementById("n8").innerHTML = v9;
+                document.getElementById("n9").innerHTML = v8;
+            }
+
+            if (v6 == '') {
+                document.getElementById("n6").innerHTML = v9;
+                document.getElementById("n9").innerHTML = v6;
+            }
+        }
+
+        function swapTiles(cell1, cell2) {
+            var temp = document.getElementById(cell1).className;
+            document.getElementById(cell1).className = document.getElementById(cell2).className;
+            document.getElementById(cell2).className = temp;
+        }
+
+
+        function startbtn() {
+            //Use nested loops to access each cell of the 3x3 grid
+            for (var row = 1; row <= 3; row++) { //For each row of the 3x3 grid
+                for (var column = 1; column <= 3; column++) { //For each column in this row
+
+                    var row2 = Math.floor(Math.random() * 3 + 1); //Pick a random row from 1 to 3
+                    var column2 = Math.floor(Math.random() * 3 + 1); //Pick a random column from 1 to 3
+
+                    swapTiles("cell" + row + column, "cell" + row2 + column2); //Swap the look & feel of both cells
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
