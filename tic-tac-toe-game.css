@@ -52,3 +52,10 @@ body {
     color: black;
     font-size: 20px;
 }
+
+#statement {
+    font-family: Verdana,
+        Geneva, Tahoma, sans-serif;
+    color: black;
+    font-size: 20px;
+}
